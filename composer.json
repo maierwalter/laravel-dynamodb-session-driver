@@ -23,7 +23,7 @@
   ],
   "require": {
     "php" : ">=5.4",
-    "aws/aws-sdk-php": "~3.93.6"
+    "aws/aws-sdk-php": "~3.175.1"
   },
   "require-dev": {
     "mockery/mockery": "^0.9.5",
