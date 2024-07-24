@@ -32,7 +32,7 @@ class DynamoHandler implements SessionHandlerInterface
      *
      * @return bool Whether or not the operation succeeded.
      */
-    public function open($save_path, $session_id)
+    public function open($save_path, $session_id) :bool
     {
         return $this->handler->open($save_path, $session_id);
     }
@@ -42,7 +42,7 @@ class DynamoHandler implements SessionHandlerInterface
      * There's no need to close the session from writing
      * @return bool Success
      */
-    public function close()
+    public function close() :bool
     {
         return true;
     }
@@ -54,7 +54,7 @@ class DynamoHandler implements SessionHandlerInterface
      *
      * @return bool Whether or not the operation succeeded.
      */
-    public function destroy($session_id)
+    public function destroy($session_id) :bool
     {
         return $this->handler->destroy($session_id);
     }
@@ -67,7 +67,7 @@ class DynamoHandler implements SessionHandlerInterface
      *
      * @return bool Whether or not the operation succeeded.
      */
-    public function gc($max_lifetime)
+    public function gc($max_lifetime) :int|false
     {
         return $this->handler->gc($max_lifetime);
     }
@@ -87,7 +87,7 @@ class DynamoHandler implements SessionHandlerInterface
      *
      * @return string Session data.
      */
-    public function read($session_id)
+    public function read($session_id) :string|false
     {
         return $this->handler->read($session_id);
     }
@@ -100,7 +100,7 @@ class DynamoHandler implements SessionHandlerInterface
      *
      * @return bool Whether or not the operation succeeded.
      */
-    public function write($session_id, $session_data)
+    public function write($session_id, $session_data) :bool
     {
         return $this->handler->write($session_id, $session_data);
     }
